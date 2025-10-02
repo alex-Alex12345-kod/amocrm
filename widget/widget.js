@@ -1,45 +1,43 @@
 define([], function () {
     return {
         init: function () {
-            console.log("Clean Clinic – виджет инициализирован");
+            console.log("✅ Clean Clinic: init вызван");
             return true;
         },
 
         render: function () {
-            console.log("Clean Clinic – рендер, зона:", this.system().area);
+            console.log("✅ Clean Clinic: render вызван");
 
-            // Общий HTML для кнопки
-            const html = `
-                <div style="padding:15px; font-family:Arial, sans-serif;">
-                    <h3>Clean Clinic</h3>
-                    <button id="ccw-btn" 
-                        style="padding:8px 14px; background:#1890ff; color:#fff; border:none; border-radius:6px; cursor:pointer;">
-                        Нажми кнопку
+            this.$el.html(`
+                <div style="padding:10px;">
+                    <h3 style="margin-bottom:10px;">Clean Clinic – тестовый виджет</h3>
+                    <button id="clean-btn" 
+                            style="padding:8px 12px; background:#4CAF50; color:#fff; border:none; border-radius:4px; cursor:pointer;">
+                        Нажми меня
                     </button>
-                    <div id="ccw-result" style="margin-top:10px; font-weight:bold; color:#333;"></div>
+                    <div id="clean-result" style="margin-top:10px; font-size:14px; color:#333;"></div>
                 </div>
-            `;
+            `);
 
-            // Вставляем в зону (и таб, и боковую панель)
-            this.$el.html(html);
-
-            // Универсальный обработчик
-            this.$el.find('#ccw-btn').on('click', () => {
-                const msg = `Кнопка нажата (${this.system().area})`;
-                this.$el.find('#ccw-result').text(msg);
-                console.log("Clean Clinic:", msg);
+            let self = this;
+            this.$el.find("#clean-btn").on("click", function () {
+                self.$el.find("#clean-result").text("Кнопка сработала! Время: " + new Date().toLocaleTimeString());
             });
 
             return true;
         },
 
         settings: function () {
-            console.log("Clean Clinic – настройки открыты");
+            console.log("✅ Clean Clinic: settings вызван");
+            return true;
+        },
+
+        dpSettings: function () {
             return true;
         },
 
         destroy: function () {
-            console.log("Clean Clinic – выгружен");
+            console.log("❌ Clean Clinic: виджет выгружен");
             return true;
         }
     };
