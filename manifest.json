@@ -1,16 +1,15 @@
 {
-  "widget": {
-    "name": "My Test Widget",
-    "description": "Тестовый виджет для AmoCRM",
-    "short_description": "Тестовый виджет",
-    "version": "1.0.0",
-    "interface_version": 2,
-    "init": "widget/init.js",
-    "locations": ["lead_card", "settings"]
-  },
-  "settings": {
-    "client_id": "my-test-widget",
-    "redirect_uri": "https://amocrm-1-0j4a.onrender.com/oauth",
-    "scopes": ["crm.leads.read", "crm.leads.write"]
+  "name": "My Test Widget",
+  "short_description": "Тестовый виджет",
+  "description": "Тестовый виджет для AmoCRM",
+  "version": "1.0.0",
+  "interface_version": 2,
+  "init": "widget.js",
+  "locations": [
+    "lead_card",
+    "settings"
+  ],
+  "support": {
+    "email": "support@example.com"
   }
 }
