@@ -1,14 +1,14 @@
 {
   "widget": {
-    "code": "my_widget",
-    "name": {
-      "ru": "Мой первый виджет"
-    },
-    "description": {
-      "ru": "Тестовый виджет для AmoCRM"
-    },
+    "code": "clean_clinic_widget",
+    "name": { "ru": "Clean Clinic Виджет" },
+    "description": { "ru": "Тестовый виджет для карточки сделки" },
     "version": "1.0.0",
-    "interface_version": 2
+    "init": "widget.js",
+    "interface_version": 2,
+    "support": {
+      "link": "https://amocrm-1-0j4a.onrender.com"
+    }
   },
   "locations": [
     {
@@ -17,3 +17,4 @@
     }
   ]
 }
+
