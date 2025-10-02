@@ -1,15 +1,16 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Отдаём статические файлы из папки widget
-app.use("/widget", express.static("widget"));
+app.use("/widget", express.static(path.join(__dirname, "widget")));
 
-// Главная страница
+// Проверка
 app.get("/", (req, res) => {
-  res.send("✅ AmoCRM Widget Server работает!");
+  res.send("✅ Сервер AmoCRM-виджета работает!");
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server started on port ${PORT}`);
 });
