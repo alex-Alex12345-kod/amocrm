@@ -1,25 +1,12 @@
 {
   "widget": {
-    "code": "clean_clinic_test",
-    "name": "Clean Clinic – Тест",
+    "name": "Clean Clinic Widget",
     "description": "Тестовый виджет для карточки сделки",
-    "short_description": "Тестовый виджет",
+    "short_description": "Clean Clinic",
     "version": "1.0.0",
-    "interface_version": 2,
-    "init_once": false,
-    "support": {
-      "link": "https://clean-clinic.ru",
-      "email": "support@clean-clinic.ru"
-    },
-    "settings": [],
-    "locations": [
-      {
-        "location": "lead_card",
-        "url": "https://amocrm-1-0j4a.onrender.com/widget/widget.js",
-        "width": 3,
-        "height": 2
-      }
-    ]
+    "author": "YourName",
+    "support": "youremail@example.com",
+    "url": "https://amocrm-1-0j4a.onrender.com/widget/widget.js",
+    "locations": ["lead_card"]
   }
 }
-
