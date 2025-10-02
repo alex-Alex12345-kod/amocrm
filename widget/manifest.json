@@ -1,28 +1,15 @@
 {
   "widget": {
-    "name": {
-      "ru": "Мой тестовый виджет",
-      "en": "My test widget"
-    },
-    "description": {
-      "ru": "Описание виджета на русском",
-      "en": "Widget description in English"
-    },
-    "short_description": {
-      "ru": "Короткое описание",
-      "en": "Short description"
-    },
+    "code": "clean_clinic_widget",
+    "name": { "ru": "Clean Clinic Виджет" },
+    "description": { "ru": "Тестовый виджет для карточки сделки" },
     "version": "1.0.0",
-    "interface_version": 2,
-    "init_once": false,
-    "support": {
-      "email": "yourmail@example.com"
-    }
+    "interface_version": 2
   },
   "locations": [
     {
       "location": "lead_card",
-      "url": "/widget/widget.js"
+      "url": https://amocrm-1-0j4a.onrender.com/widget/widget.js"
     }
   ]
 }
