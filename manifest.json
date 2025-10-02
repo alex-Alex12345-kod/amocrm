@@ -5,12 +5,16 @@
       "ru": "Clean Clinic Виджет"
     },
     "description": {
-      "ru": "Тестовый виджет для карточки сделки"
+      "ru": "Тестовый виджет для карточки сделки (вкладка + боковая панель)"
     },
     "version": "1.0.0",
     "interface_version": 2
   },
   "locations": [
+    {
+      "location": "lead_card_tab",
+      "url": "https://amocrm-1-0j4a.onrender.com/widget/widget.js"
+    },
     {
       "location": "lead_card",
       "url": "https://amocrm-1-0j4a.onrender.com/widget/widget.js"
