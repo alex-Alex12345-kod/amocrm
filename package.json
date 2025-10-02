@@ -1,5 +1,5 @@
 {
-  "name": "amocrm-widget-server",
+  "name": "amocrm-widget",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,8 +7,5 @@
   },
   "dependencies": {
     "express": "^4.18.2"
-  },
-  "engines": {
-    "node": "20.x"
   }
 }
