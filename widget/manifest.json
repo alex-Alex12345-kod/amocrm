@@ -1,0 +1,28 @@
+{
+  "widget": {
+    "name": {
+      "ru": "Мой тестовый виджет",
+      "en": "My test widget"
+    },
+    "description": {
+      "ru": "Описание виджета на русском",
+      "en": "Widget description in English"
+    },
+    "short_description": {
+      "ru": "Короткое описание",
+      "en": "Short description"
+    },
+    "version": "1.0.0",
+    "interface_version": 2,
+    "init_once": false,
+    "support": {
+      "email": "yourmail@example.com"
+    }
+  },
+  "locations": [
+    {
+      "location": "lead_card",
+      "url": "/widget/widget.js"
+    }
+  ]
+}
