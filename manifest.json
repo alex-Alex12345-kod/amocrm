@@ -1,12 +1,19 @@
 {
   "widget": {
     "code": "my_widget",
-    "name": "Мой первый виджет",
-    "description": "Тестовый виджет для AmoCRM",
+    "name": {
+      "ru": "Мой первый виджет"
+    },
+    "description": {
+      "ru": "Тестовый виджет для AmoCRM"
+    },
     "version": "1.0.0",
-    "init": "widget.js",
-    "support": {
-      "link": "https://amocrm-1-0j4a.onrender.com"
+    "interface_version": 2
+  },
+  "locations": [
+    {
+      "location": "lead_card",
+      "url": "https://amocrm-1-0j4a.onrender.com/widget/widget.js"
     }
-  }
+  ]
 }
