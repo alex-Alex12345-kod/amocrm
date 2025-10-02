@@ -1,23 +1,16 @@
 {
   "widget": {
-    "code": "clean_clinic_widget",
-    "name": {
-      "ru": "Clean Clinic Виджет"
-    },
-    "description": {
-      "ru": "Тестовый виджет для карточки сделки (вкладка + боковая панель)"
-    },
+    "name": "My Test Widget",
+    "description": "Тестовый виджет для AmoCRM",
+    "short_description": "Тестовый виджет",
     "version": "1.0.0",
-    "interface_version": 2
+    "interface_version": 2,
+    "init": "widget/init.js",
+    "locations": ["lead_card", "settings"]
   },
-  "locations": [
-    {
-      "location": "lead_card_tab",
-      "url": "https://amocrm-1-0j4a.onrender.com/widget/widget.js"
-    },
-    {
-      "location": "lead_card",
-      "url": "https://amocrm-1-0j4a.onrender.com/widget/widget.js"
-    }
-  ]
+  "settings": {
+    "client_id": "my-test-widget",
+    "redirect_uri": "https://amocrm-1-0j4a.onrender.com/oauth",
+    "scopes": ["crm.leads.read", "crm.leads.write"]
+  }
 }
