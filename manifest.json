@@ -1,12 +1,19 @@
 {
   "widget": {
-    "name": "Clean Clinic Widget",
-    "description": "Тестовый виджет для карточки сделки",
-    "short_description": "Clean Clinic",
+    "code": "clean_clinic_widget",
+    "name": {
+      "ru": "Clean Clinic Виджет"
+    },
+    "description": {
+      "ru": "Тестовый виджет для карточки сделки"
+    },
     "version": "1.0.0",
-    "author": "YourName",
-    "support": "youremail@example.com",
-    "url": "https://amocrm-1-0j4a.onrender.com/widget/widget.js",
-    "locations": ["lead_card"]
-  }
+    "interface_version": 2
+  },
+  "locations": [
+    {
+      "location": "lead_card",
+      "url": "https://amocrm-1-0j4a.onrender.com/widget/widget.js"
+    }
+  ]
 }
