@@ -3,3 +3,6 @@ site.tar.gz
 
 .env*
 !.env.example
+.wrangler/
+.dev.vars
+*.private.log

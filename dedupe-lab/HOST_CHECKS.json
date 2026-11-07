@@ -1,0 +1,30 @@
+[
+  {
+    "path": "/ready",
+    "method": "GET",
+    "authorized": false,
+    "status": 403,
+    "body": "error code: 1010\n"
+  },
+  {
+    "path": "/health",
+    "method": "GET",
+    "authorized": false,
+    "status": 403,
+    "body": "error code: 1010\n"
+  },
+  {
+    "path": "/health",
+    "method": "GET",
+    "authorized": true,
+    "status": 403,
+    "body": "error code: 1010\n"
+  },
+  {
+    "path": "/oauth/secrets",
+    "method": "POST",
+    "authorized": false,
+    "status": 403,
+    "body": "error code: 1010\n"
+  }
+]

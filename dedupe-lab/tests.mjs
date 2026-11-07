@@ -43,3 +43,18 @@ test('Callback rejects invalid state and foreign account before token request',a
 test('No account connection returns honest error, not synthetic CRM results',async()=>{
  const e=env();const r=await worker.fetch(request('/api/scan?pipeline_id=7'),e);assert.equal(r.status,409);assert.match((await r.json()).error,/не подключен/);
 });
+
+test('OAuth success creates an authenticated HttpOnly session; tampering is rejected',async()=>{
+ const e=env();const begin=await worker.fetch(request('/begin'),e);const state=(await begin.text()).match(/data-state="([^"]+)"/)[1];
+ const cookie=begin.headers.get('set-cookie').split(';')[0];
+ const posted=await worker.fetch(request('/oauth/secrets',null,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({state,client_id:'synthetic-client',client_secret:'synthetic-secret-value'})}),e);assert.equal(posted.status,200);
+ const realFetch=globalThis.fetch;
+ try{
+  globalThis.fetch=async url=>{assert.equal(url,'https://glxxb2xd21.amocrm.ru/oauth2/access_token');return Response.json({access_token:'synthetic-access-token',refresh_token:'synthetic-refresh-token',expires_in:3600})};
+  const r=await worker.fetch(request('/oauth/return?state='+state+'&referer=glxxb2xd21.amocrm.ru&code=synthetic',null,{headers:{Cookie:cookie}}),e);
+  assert.equal(r.status,303);const cookies=r.headers.getSetCookie();assert.equal(cookies.length,2);
+  const session=cookies.find(c=>c.startsWith('fb_session='));assert.match(session,/HttpOnly/);assert.match(session,/Secure/);assert.match(session,/SameSite=Lax/);
+  const valid=await worker.fetch(request('/health',null,{headers:{Cookie:session.split(';')[0]}}),e);assert.equal(valid.status,200);assert.equal((await valid.json()).crm_connected,true);
+  const invalid=await worker.fetch(request('/health',null,{headers:{Cookie:'fb_session='+('x'.repeat(43))}}),e);assert.equal(invalid.status,401);
+ }finally{globalThis.fetch=realFetch}
+});

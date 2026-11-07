@@ -1,0 +1,16 @@
+{
+  "name": "flowbit-dedupe-lab",
+  "main": "cloudflare.mjs",
+  "compatibility_date": "2026-11-07",
+  "vars": {
+    "INSTALL_ENABLED": "1",
+    "ALLOW_OWNER_BOOTSTRAP": "0"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "flowbit-dedupe-lab",
+      "database_id": "4cd029ef-c6d8-4776-94e8-c889cb95c683"
+    }
+  ]
+}

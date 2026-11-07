@@ -31,7 +31,9 @@ export function makeServer(env,origin){
    const url=new URL(incoming.url,origin);if(url.origin!==origin){outgoing.writeHead(400);outgoing.end('Invalid origin');return}
    const req=new Request(url,{method:incoming.method,headers,body:['GET','HEAD'].includes(incoming.method)?undefined:Buffer.concat(parts)});
    const response=await worker.fetch(req,env);
-   outgoing.writeHead(response.status,Object.fromEntries(response.headers));outgoing.end(Buffer.from(await response.arrayBuffer()));
+   const responseHeaders=Object.fromEntries(response.headers);
+   if(response.headers.getSetCookie().length)responseHeaders['set-cookie']=response.headers.getSetCookie();
+   outgoing.writeHead(response.status,responseHeaders);outgoing.end(Buffer.from(await response.arrayBuffer()));
   }catch{outgoing.writeHead(500,{'Content-Type':'application/json'});outgoing.end('{"error":"Internal error"}');}
  });
 }
