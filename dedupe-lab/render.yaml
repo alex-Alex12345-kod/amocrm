@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: flowbit-dedupe-lab
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: node --check server.mjs && node --test tests.mjs server.test.mjs
+    startCommand: node server.mjs
+    healthCheckPath: /ready
+    autoDeployTrigger: "off"
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: DATA_DIR
+        value: /tmp/flowbit-dedupe-lab
+      - key: INSTALL_ENABLED
+        value: "1"
+      - key: ALLOW_OWNER_BOOTSTRAP
+        value: "0"
+      - key: LAB_SERVICE_KEY
+        generateValue: true
+      - key: VAULT_KEY
+        sync: false

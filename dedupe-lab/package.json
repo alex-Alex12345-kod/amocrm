@@ -1,0 +1,14 @@
+{
+  "name": "flowbit-dedupe-lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "validate": "node scripts/validate-artifact.mjs",
+    "start": "node server.mjs",
+    "test": "node --test tests.mjs server.test.mjs"
+  },
+  "engines": {
+    "node": ">=22 <23"
+  }
+}
